@@ -1,0 +1,19 @@
+name: "stylelua"
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  stylelua:
+    name: "stylelua"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run stylelua
+        uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: --check .
