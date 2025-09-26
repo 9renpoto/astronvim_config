@@ -1,5 +1,5 @@
 pre-commit:
   commands:
-    stylelua:
+    stylua:
       glob: "{init.lua,lua/**/*.lua}"
-      run: "stylelua --check {files}"
+      run: "stylua --check {files}"

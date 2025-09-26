@@ -1,4 +1,4 @@
-name: "stylelua"
+name: "stylua"
 on:
   push:
     branches:
@@ -6,12 +6,12 @@ on:
   pull_request:
 
 jobs:
-  stylelua:
-    name: "stylelua"
+  stylua:
+    name: "stylua"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run stylelua
+      - name: Run stylua
         uses: JohnnyMorganz/stylua-action@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
