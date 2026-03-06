@@ -17,5 +17,6 @@ return {
   { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.typescript-deno" },
+  { import = "astrocommunity.completion.copilot-lua" },
   -- import/override with your plugins folder
 }
