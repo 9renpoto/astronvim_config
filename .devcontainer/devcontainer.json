@@ -6,6 +6,7 @@
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
 		"ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
+		"ghcr.io/devcontainers-extra/features/lefthook-asdf:2": {},
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "lts"
 		},
@@ -13,5 +14,5 @@
 			"version": "latest"
 		}
 	},
-	"postCreateCommand": "rm -rf $HOME/.config/nvim && ln -s /workspaces/astronvim_config $HOME/.config/nvim"
+	"postCreateCommand": "rm -rf $HOME/.config/nvim && ln -s /workspaces/astronvim_config $HOME/.config/nvim && lefthook install -f"
 }
