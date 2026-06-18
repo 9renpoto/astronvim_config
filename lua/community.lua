@@ -8,9 +8,6 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.dracula-nvim" },
-  { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.typescript-deno" },
-  { import = "astrocommunity.ai.copilotchat-nvim" },
   -- import/override with your plugins folder
 }
