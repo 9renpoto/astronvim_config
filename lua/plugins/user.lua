@@ -19,12 +19,14 @@ return {
 
   -- == Examples of Overriding Plugins ==
 
-  -- customize alpha options
+  -- customize dashboard options (AstroNvim v5+ uses snacks.dashboard instead of alpha-nvim)
   {
-    "goolord/alpha-nvim",
+    "folke/snacks.nvim",
     opts = function(_, opts)
       -- customize the dashboard header
-      opts.section.header.val = {
+      opts.dashboard = opts.dashboard or {}
+      opts.dashboard.preset = opts.dashboard.preset or {}
+      opts.dashboard.preset.header = table.concat({
         " █████  ███████ ████████ ██████   ██████",
         "██   ██ ██         ██    ██   ██ ██    ██",
         "███████ ███████    ██    ██████  ██    ██",
@@ -36,8 +38,7 @@ return {
         "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
         "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
         "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
+      }, "\n")
     end,
   },
 
