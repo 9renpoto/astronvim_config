@@ -5,8 +5,8 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
-		"ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
-		"ghcr.io/devcontainers-extra/features/lefthook-asdf:2": {},
+		"ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+		"ghcr.io/devcontainers-extra/features/lefthook-asdf:1": {},
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "lts"
 		},
@@ -14,5 +14,5 @@
 			"version": "latest"
 		}
 	},
-	"postCreateCommand": "rm -rf $HOME/.config/nvim && ln -s /workspaces/astronvim_config $HOME/.config/nvim && lefthook install -f"
+	"postCreateCommand": "bash -lc 'eval \"$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)\" && brew install neovim && rm -rf $HOME/.config/nvim && ln -s /workspaces/astronvim_config $HOME/.config/nvim && lefthook install -f'"
 }
