@@ -1,0 +1,26 @@
+name: "zizmor"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions: {}
+
+jobs:
+  zizmor:
+    name: "zizmor"
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      contents: read
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Run zizmor
+        uses: zizmorcore/zizmor-action@70fb788f84895a7701f5643d103d587e460b5c99 # v0.6.3
